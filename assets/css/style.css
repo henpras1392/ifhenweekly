@@ -1,0 +1,34 @@
+/* Mengatur tampilan body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Judul */
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+/* Paragraf */
+p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Tombol */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Efek saat mouse diarahkan */
+button:hover {
+    background-color: #2980b9;
+}
