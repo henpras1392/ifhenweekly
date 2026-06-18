@@ -48,8 +48,8 @@
                 </div>
               </td>
               <td>
-                <a href="edit-data.html" class="btn-edit">Edit</a>
-                <a href="delete-data.html" class="btn-delete">Delete</a>
+                <a href="edit-data.php" class="btn-edit">Edit</a>
+                <a href="hapusdata.php?id=<?= $mhs["id"] ?>" onclick="return confirm('Apakah anda yakin akan menghapus data?')" class="btn-delete">Delete</a>
               </td>
             </tr>
             <?php
