@@ -84,6 +84,7 @@
             </tr>
         </table>
     </form>
+    <br>
     <td><a href="mahasiswa.php">Back</a></td>
 </body>
 </html>
