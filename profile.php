@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile | INFORMATIKA</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Profile | HENPRAS WEBSITE</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.2">
 </head>
 <body>
-    <h1 align="center">INFORMATIKA</h1>
+    <h1 align="center">HENPRAS WEBSITE</h1>
      <center>
         <img src="assets/images/logo.png" width="200px"/>
     </center>

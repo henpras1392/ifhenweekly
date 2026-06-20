@@ -1,34 +1,128 @@
-/* Mengatur tampilan body */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
+/* ==========================================================================
+   PERMAINAN WARNA & TIPOGRAFI (TANPA MERUBAH POSISI/LAYOUT)
+   ========================================================================== */
+
+/* 1. Pewarnaan Dasar Tabel */
+table {
+    border-collapse: collapse;
+    background-color: #ffffff; /* Latar belakang tabel bersih */
+    color: #334155;            /* Warna teks utama (Slate Dark) */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    overflow: hidden;
 }
 
-/* Judul */
-h1 {
-    color: #333;
-    text-align: center;
+/* 2. Warna Header Tabel (Premium Deep Blue/Indigo) */
+th {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6); /* Gradasi biru mewah */
+    color: #ffffff;                                        /* Teks putih bersih */
+    font-weight: 600;
+    text-transform: uppercase;                             /* Teks kapital formal */
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    border-bottom: 3px solid #1d4ed8;
 }
 
-/* Paragraf */
-p {
-    color: #555;
-    line-height: 1.6;
+/* 3. Warna Garis Pembatas (Halus & Bersih) */
+td, th {
+    border-bottom: 1px solid #e2e8f0; /* Garis abu-abu tipis yang elegan */
 }
 
-/* Tombol */
-button {
-    background-color: #3498db;
-    color: white;
+/* 4. Efek Baris Belang-Belang (Zebra Striping) */
+tbody tr:nth-child(even) {
+    background-color: #f8fafc; /* Warna abu-abu sangat muda pada baris genap */
+}
+
+/* 5. Efek Sorotan Warna Saat Kursor Diatasnya (Hover Effect) */
+tbody tr:hover {
+    background-color: #f0fdf4 !important; /* Berubah jadi hijau mint lembut saat di-hover */
+    color: #166534;                        /* Teks berubah menjadi hijau gelap */
+    transition: background-color 0.2s ease; /* Transisi warna yang mulus */
+}
+
+/* 6. Pewarnaan Khusus jika ada Link di dalam Tabel */
+table a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+table a:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   STYLING TOMBOL MODERN (HANYA WARNA, VARIASI, & EFEK INTERAKSI)
+   ========================================================================== */
+
+.btn, button {
+    /* Font & Warna Teks */
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ffffff;
+    
+    /* Pewarnaan & Gradasi Elegan (Vibrant Blue ke Indigo) */
+    background: linear-gradient(135deg, #3b82f6, #4f46e5);
+    
+    /* Bentuk Tombol (Sudut Melengkung Modern) */
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 8px; /* Tidak terlalu kotak, tidak terlalu bulat */
+    
+    /* Efek Bayangan Halus (Memberikan Efek Kedalaman/3D Modern) */
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    
+    /* Kursor & Transisi Animasi agar Mulus */
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Efek saat mouse diarahkan */
-button:hover {
-    background-color: #2980b9;
+/* 1. Efek saat Kursor Berada di Atas Tombol (Hover) */
+.btn:hover, button:hover {
+    /* Gradasi bergeser sedikit lebih terang/vibrant */
+    background: linear-gradient(135deg, #2563eb, #4338ca);
+    
+    /* Bayangan menjadi lebih tebal & menyebar (Efek Tombol Terangkat) */
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5);
+    
+    /* Memberikan efek kilau sedikit menggunakan opacity */
+    opacity: 0.95;
+}
+
+/* 2. Efek saat Tombol Diklik (Active) */
+.btn:active, button:active {
+    /* Bayangan mengecil seolah-olah tombol benar-benar ditekan ke dalam */
+    box-shadow: 0 2px 6px rgba(79, 70, 229, 0.4);
+    opacity: 1;
+}
+
+/* 3. Efek saat Tombol dalam posisi Terpilih/Fokus (Aksesibilitas) */
+.btn:focus, button:focus {
+    outline: none;
+    /* Memberikan garis luar tipis transparan yang estetik */
+    box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.5), 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+/* ==========================================================================
+   VARIASI WARNA TAMBAHAN (Opsional - Tinggal Tambah Class di HTML)
+   ========================================================================== */
+
+/* Tombol Hijau Sukses / Simpan */
+.btn-success {
+    background: linear-gradient(135deg, #10b981, #059669);
+    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+.btn-success:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+    box-shadow: 0 6px 20px rgba(5, 150, 105, 0.5);
+}
+
+/* Tombol Merah Hapus / Bahaya */
+.btn-danger {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+.btn-danger:hover {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.5);
 }

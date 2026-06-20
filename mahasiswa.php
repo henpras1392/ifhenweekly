@@ -10,11 +10,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Mahasiswa | INFORMATIKA</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Data Mahasiswa | HENPRAS WEBSITE</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.2">
 </head>
 <body>
-    <h1 align="center">INFORMATIKA</h1>
+    <h1 align="center">HENPRAS WEBSITE</h1>
     <center>
         <img src="assets/images/logo.png" width="200px"/>
     </center>
@@ -28,24 +28,21 @@
         </tr>
     </table>
     <br>
-
-    <table border="1" cellspasing="0" cellpadding="10" align="center">
-    
-    <button onclick="window.location.href='tambahdata.php'" class="btn-tambah">
-      Tambah Data
-    </button>
-    <br>
-    
+    <h2 align="center">Data Mahasiswa</h2>
+    <a href="tambahdata.php">
+      <button>Tambah Data</button>
+    </a>
+    <table border="1" cellspasing="0" cellpadding="10" align="center">   
     <br>
         <tr>
               <th>No</th>
-              <th>Name</th>
+              <th>Nama</th>
               <th>NIM</th>
               <th>Program Studi</th>
               <th>Email</th>
               <th>Nomor HP</th>
               <th>Foto</th>
-              <th>Action</th>
+              <th>Aksi</th>
             </tr>
             <?php
                 $i = 1;
@@ -65,8 +62,8 @@
                 </div>
               </td>
               <td>
-                <a href="edit-data.php" class="btn-edit">Edit</a>
-                <a href="hapusdata.php?id=<?= $mhs["id"] ?>" onclick="return confirm('Apakah anda yakin akan menghapus data?')" class="btn-delete">Delete</a>
+                <a href="edit-data.php" class="btn-edit">Sunting</a>
+                <a href="hapusdata.php?id=<?= $mhs["id"] ?>" onclick="return confirm('Apakah anda yakin akan menghapus data?')" class="btn-delete">Hapus</a>
               </td>
             </tr>
             <?php
