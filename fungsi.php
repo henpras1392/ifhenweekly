@@ -20,18 +20,25 @@ function tampildata($query) //proses data yg diminta
     return $rows; //array assoc
 }
 
-function tambahdata($data)
+function tambahdata($data, $files)
 {
     global $koneksi;
 
-     $nama = $_POST["nama"];
+        $nama = $_POST["nama"];
         $nim = $_POST["nim"];
         $prodi = $_POST["prodi"];
         $email = $_POST["email"];
         $nohp = $_POST["hp"];
-        $foto = $_POST["foto"];
+        
+        //file foto
+        $namafoto = $files["name"];
+        $newnamafoto = date('dmYhis_') .$namafoto;
+        $tmpfoto = $files["tmp_name"];
+        $folder = "assets/images/$newnamafoto";
+        if(move_uploaded_file($tmpfoto,$folder))
 
-        $query = "INSERT INTO mahasiswa (nama,nim,prodi,email,no_hp,foto) VALUES ('$nama', '$nim', '$prodi', '$email', '$nohp', '$foto')";
+        $query = "INSERT INTO mahasiswa (nama,nim,prodi,email,no_hp,foto) 
+            VALUES ('$nama', '$nim', '$prodi', '$email', '$nohp', '$newnamafoto')";
 
         mysqli_query($koneksi,$query);
 
@@ -51,4 +58,22 @@ function hapusdata($id)
     return mysqli_affected_rows($koneksi);
 }
 
+function ubahdata($data, $id)
+{
+    global $koneksi;
+
+        $nama = $_POST["nama"];
+        $nim = $_POST["nim"];
+        $prodi = $_POST["prodi"];
+        $email = $_POST["email"];
+        $nohp = $_POST["hp"];
+        
+        $query = "UPDATE mahasiswa SET nama='$nama', nim='$nim', prodi='$prodi', email='$email', no_hp='$nohp', foto='$newnamafoto' WHERE id=$id";
+
+        mysqli_query($koneksi,$query);
+
+        return mysqli_affected_rows($koneksi);
+
+
+}
 ?>

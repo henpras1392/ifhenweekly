@@ -58,11 +58,11 @@
               <td><?= $mhs["no_hp"] ?></td>
               <td>
                 <div>
-                  <img src="assets/images/Mike_Shinoda.jpg" width="100" height="120"alt="Mike_Shinoda.jpg"/>
+                  <img src="assets/images/<?= $mhs["foto"] ?>" width="100" height="120" alt="Foto Mahasiswa"/>
                 </div>
               </td>
               <td>
-                <a href="edit-data.php" class="btn-edit">Sunting</a>
+                <a href="ubahdata.php?id=<?= $mhs["id"] ?>" class="btn-edit">Sunting</a>
                 <a href="hapusdata.php?id=<?= $mhs["id"] ?>" onclick="return confirm('Apakah anda yakin akan menghapus data?')" class="btn-delete">Hapus</a>
               </td>
             </tr>
