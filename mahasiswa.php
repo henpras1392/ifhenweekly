@@ -1,6 +1,14 @@
 <?php
 
     require "fungsi.php";
+
+    if(!isset($_SESSION["login"]))
+    {
+        header("Location: login.php");
+        exit;
+    }
+
+    
     $qmahasiswa = "SELECT * FROM mahasiswa";
     $mahasiswas = tampildata($qmahasiswa); //array assoc
 
@@ -14,6 +22,8 @@
     <link rel="stylesheet" href="assets/css/style.css?v=1.2">
 </head>
 <body>
+    <a href="logout.php">
+      <button>Logout</button>
     <h1 align="center">HENPRAS WEBSITE</h1>
     <center>
         <img src="assets/images/logo.png" width="200px"/>
@@ -42,7 +52,7 @@
               <th>Email</th>
               <th>Nomor HP</th>
               <th>Foto</th>
-              <th>Aksi</th>
+              <th>Pengaturan</th>
             </tr>
             <?php
                 $i = 1;
@@ -62,8 +72,8 @@
                 </div>
               </td>
               <td>
-                <a href="ubahdata.php?id=<?= $mhs["id"] ?>" class="btn-edit">Sunting</a>
-                <a href="hapusdata.php?id=<?= $mhs["id"] ?>" onclick="return confirm('Apakah anda yakin akan menghapus data?')" class="btn-delete">Hapus</a>
+                <a href="ubahdata.php?id=<?= $mhs["id"] ?>"><button>Sunting</button></a>
+                <a href="hapusdata.php?id=<?= $mhs["id"] ?>" onclick="return confirm('Apakah anda yakin akan menghapus data?')"><button>Hapus</button></a>
               </td>
             </tr>
             <?php
